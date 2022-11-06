@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://04-PlayerBodies/PlayerTemplate.gd" type="Script" id=2]
 [ext_resource path="res://04-PlayerBodies/Clickbox.gd" type="Script" id=3]
@@ -7,11 +7,72 @@
 [sub_resource type="StreamTexture" id=3]
 load_path = "res://.import/Player.png-69555da319594f5a687cc1560a3452bc.stex"
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 8 )
-
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 15, 17 )
+
+[sub_resource type="Animation" id=27]
+resource_name = "AttackDown"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 36, 37, 38, 39 ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "AttackLeft"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 32, 33, 34, 35 ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "AttackRight"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 24, 25, 26, 27 ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "AttackUp"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 28, 29, 30, 31 ]
+}
 
 [sub_resource type="Animation" id=12]
 resource_name = "IdleDown"
@@ -164,6 +225,110 @@ tracks/0/keys = {
 "values": [ 7, 8, 9, 10, 11, 6 ]
 }
 
+[sub_resource type="AnimationNodeAnimation" id=31]
+animation = "AttackLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=32]
+animation = "AttackDown"
+
+[sub_resource type="AnimationNodeAnimation" id=33]
+animation = "AttackRight"
+
+[sub_resource type="AnimationNodeAnimation" id=34]
+animation = "AttackUp"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=35]
+blend_point_0/node = SubResource( 31 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 32 )
+blend_point_1/pos = Vector2( 0, 1 )
+blend_point_2/node = SubResource( 33 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 34 )
+blend_point_3/pos = Vector2( 0, -1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "IdleLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "IdleDown"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "IdleRight"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "IdleUp"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=17]
+blend_point_0/node = SubResource( 13 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 14 )
+blend_point_1/pos = Vector2( 0, 1 )
+blend_point_2/node = SubResource( 15 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 16 )
+blend_point_3/pos = Vector2( 0, -1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "RunLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "RunDown"
+
+[sub_resource type="AnimationNodeAnimation" id=22]
+animation = "RunRight"
+
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "RunUp"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=24]
+blend_point_0/node = SubResource( 20 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 21 )
+blend_point_1/pos = Vector2( 0, 1 )
+blend_point_2/node = SubResource( 22 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 23 )
+blend_point_3/pos = Vector2( 0, -1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=36]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=37]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=38]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=39]
+
+[sub_resource type="AnimationNodeStateMachine" id=18]
+states/Attack/node = SubResource( 35 )
+states/Attack/position = Vector2( 351, 211 )
+states/Idle/node = SubResource( 17 )
+states/Idle/position = Vector2( 267, 114 )
+states/Run/node = SubResource( 24 )
+states/Run/position = Vector2( 428, 114 )
+transitions = [ "Idle", "Run", SubResource( 25 ), "Run", "Idle", SubResource( 26 ), "Run", "Attack", SubResource( 36 ), "Attack", "Run", SubResource( 37 ), "Attack", "Idle", SubResource( 38 ), "Idle", "Attack", SubResource( 39 ) ]
+start_node = "Idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=19]
+
+[sub_resource type="RectangleShape2D" id=40]
+extents = Vector2( 7.5, 4 )
+
+[sub_resource type="RectangleShape2D" id=41]
+extents = Vector2( 8, 6.5 )
+
+[sub_resource type="RectangleShape2D" id=42]
+extents = Vector2( 7, 11.5 )
+
 [node name="PlayerTemplate" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
@@ -175,24 +340,23 @@ texture = ExtResource( 4 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = SubResource( 3 )
 hframes = 60
-frame = 18
-
-[node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 8 )
-shape = SubResource( 1 )
+frame = 12
 
 [node name="Clickbox" type="Area2D" parent="."]
 script = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Clickbox"]
+[node name="ClickBoxArea" type="CollisionShape2D" parent="Clickbox"]
 position = Vector2( 0, 3 )
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
-autoplay = "IdleDown"
 reset_on_save = false
 method_call_mode = 1
+anims/AttackDown = SubResource( 27 )
+anims/AttackLeft = SubResource( 28 )
+anims/AttackRight = SubResource( 29 )
+anims/AttackUp = SubResource( 30 )
 anims/IdleDown = SubResource( 12 )
 anims/IdleLeft = SubResource( 11 )
 anims/IdleRight = SubResource( 9 )
@@ -202,3 +366,37 @@ anims/RunDown = SubResource( 8 )
 anims/RunLeft = SubResource( 7 )
 anims/RunRight = SubResource( 5 )
 anims/RunUp = SubResource( 6 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 18 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 19 )
+parameters/Attack/blend_position = Vector2( 0, 0 )
+parameters/Idle/blend_position = Vector2( 0, 0 )
+parameters/Run/blend_position = Vector2( 0, 0 )
+
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+modulate = Color( 0.0313726, 0, 1, 1 )
+position = Vector2( 0, 10 )
+shape = SubResource( 40 )
+
+[node name="MeleeHitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="Hitbox" type="CollisionShape2D" parent="MeleeHitbox"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 0, 1.5 )
+shape = SubResource( 41 )
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="Hurtbox" type="CollisionShape2D" parent="Hurtbox"]
+modulate = Color( 0.00784314, 1, 0, 1 )
+position = Vector2( 0, 1.5 )
+shape = SubResource( 42 )
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]

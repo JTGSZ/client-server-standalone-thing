@@ -19,33 +19,14 @@ func follow_controlled_mob():
 	if current_body && following_mob:
 		self.position = current_body.position
 
-#func read_input():
-	#velocity = Vector2()
-
-	#if Input.is_action_pressed("Up"):
-	#	velocity.y -= 1
-		#direction = Vector2(0, -1)
-	#if Input.is_action_pressed("Down"):
-	#	velocity.y += 1
-		#direction = Vector2(0, 1)
-	#if Input.is_action_pressed("Left"):
-	#	velocity.x -= 1
-		#direction = Vector2(-1, 0)
-	#if Input.is_action_pressed("Right"):
-	#	velocity.x += 1
-		#direction = Vector2(1, 0)
-	
-	#if self.current_body:
-	#	velocity = velocity.normalized()
-	#	velocity = current_body.move_and_slide(velocity * current_body.speed)
-
 func _input(event):
 	#tab mob control swaps
 	if(Input.is_action_just_released("tab")):
 		swap_to_next_mob()
 	
-	if(Input.is_action_just_pressed("left_mousebutton")):
-		print(event)
+	#if(Input.is_action_just_pressed("left_mousebutton")):
+		#print(event)
+		
 
 #------------------------
 #		HELPERS

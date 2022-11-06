@@ -23,9 +23,14 @@ func remove_from_controllable_mobs(removed_character: KinematicBody2D):
 	self.controllable_characters.remove(character_index)
 
 func selected_target(target):
-	if currently_selected:
-		print(currently_selected)
+	#If the target is the same as thing we currently selected, just deselect it.
+	if target == currently_selected:
 		currently_selected.selected(false)
-	
-	currently_selected = target
-	target.selected(true)
+		currently_selected = null
+	else:
+		#If we are clicking on another target unselect and then select the new one.
+		if currently_selected:
+			currently_selected.selected(false)
+		
+		currently_selected = target
+		target.selected(true)
