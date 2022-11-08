@@ -1,17 +1,25 @@
 extends KinematicBody2D
 
+#the direction we are moving
 var velocity: Vector2 = Vector2()
-var direction: Vector2 = Vector2()
+#the direction we are facing.
+var facing_direction: Vector2 = Vector2()
 
 #testcase for health
 var health = 5000
-
-var relative_target_direction: Vector2 = Vector2()
+#How fast we goin atm
 var speed = 200
-
+#Do we have a player hooked into us?
 var body_player_controlled = false
 
+#Test-----------------------------------------
+var spell = preload("res://99-TestCases/Spell.tscn")
+var can_fire = true
+var rate_of_fire = 0.4
+#Test-----------------------------------------
+
 #onready vars basically get set in _ready lol
+#this is just animation player and state shit
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
@@ -29,21 +37,23 @@ func _physics_process(_delta):
 	if body_player_controlled:
 		read_movement_inputs()
 
-	velocity = velocity.normalized()
+	
 	
 	if velocity != Vector2.ZERO:
-		animationTree.set("parameters/Idle/blend_position", direction)
-		animationTree.set("parameters/Run/blend_position", direction)
-		animationTree.set("parameters/Attack/blend_position", direction)
+		animationTree.set("parameters/Idle/blend_position", facing_direction)
+		animationTree.set("parameters/Run/blend_position", facing_direction)
+#		animationTree.set("parameters/Attack/blend_position", facing_direction)
 		animationState.travel("Run")
 	else:
-		animationTree.set("parameters/Idle/blend_position", direction)
+		animationTree.set("parameters/Idle/blend_position", facing_direction)
 		animationState.travel("Idle")
-	
+	animationTree.set("parameters/Attack/blend_position", facing_direction)
 	if body_player_controlled:
 		read_attack_inputs()
-
-	velocity = self.move_and_slide(velocity * self.speed)
+	
+	#This basically makes sure our diagonals don't go xtra fast
+	velocity = velocity.normalized()
+	velocity = move_and_slide(velocity * speed)
 
 func read_movement_inputs():
 	# If we hit ctrl, we just swap directions.
@@ -51,41 +61,45 @@ func read_movement_inputs():
 	#Something to consider is if we also add the velocities here, so u can strafe etc.
 	if Input.is_action_pressed("ctrl"):
 		if Input.is_action_just_pressed("Up"):
-			direction = Vector2(0, -1)
+			facing_direction = Vector2(0, -1)
 		if Input.is_action_just_pressed("Down"):
-			direction = Vector2(0, 1)
+			facing_direction = Vector2(0, 1)
 		if Input.is_action_just_pressed("Left"):
-			direction = Vector2(-1, 0)
+			facing_direction = Vector2(-1, 0)
 		if Input.is_action_just_pressed("Right"):
-			direction = Vector2(1, 0)
+			facing_direction = Vector2(1, 0)
 	else:
 		if Input.is_action_pressed("Up"):
 			velocity.y -= 1
-			direction = Vector2(0, -1)
+			facing_direction = Vector2(0, -1)
 		if Input.is_action_pressed("Down"):
 			velocity.y += 1
-			direction = Vector2(0, 1)
+			facing_direction = Vector2(0, 1)
 		if Input.is_action_pressed("Left"):
 			velocity.x -= 1
-			direction = Vector2(-1, 0)
+			facing_direction = Vector2(-1, 0)
 		if Input.is_action_pressed("Right"):
 			velocity.x += 1
-			direction = Vector2(1, 0)
-		
+			facing_direction = Vector2(1, 0)
+
+	
 		if ActorController.currently_selected:
 			var target_pos = ActorController.currently_selected.get_global_position()
 			var our_pos = get_global_position()
 			
-			direction = our_pos.direction_to(target_pos)
+			facing_direction = our_pos.direction_to(target_pos)
 
 func read_attack_inputs():
-	if Input.is_action_just_pressed("spacebar"):
+	if Input.is_action_just_pressed("spacebar") and can_fire == true:
+		can_fire = false
 		animationState.travel("Attack")
-		meleehitbox.position.x += direction.x * 16
-		meleehitbox.position.y += direction.y * 16
-		meleehitbox.position.x = 0
-		meleehitbox.position.y = 0
-		
+		var spell_instance = spell.instance()
+		get_parent().add_child(spell_instance)
+		spell_instance.origin_caster = self
+		spell_instance.position = get_global_position()
+		spell_instance.rotation = get_angle_to(get_global_mouse_position())
+		yield(get_tree().create_timer(rate_of_fire),"timeout")
+		can_fire = true
 
 #dumb selection circle lol
 #when called we just make it visible and not visible ya
@@ -97,8 +111,13 @@ func selected(selected):
 		else:
 			select_sprite.visible = false
 
-#this is a signal sent to us from the hurtbox
-#When a area on the hitbox layer enters it, and it is not our own.
-func _on_Hurtbox_area_entered(area):
-	if area.owner != self:
-		print("ouch bro!")
+func spell_hit(attack):
+	health -= attack
+	print("Taken Attack:", health, "/5000")
+	
+##this is a signal sent to us from the hurtbox
+##When a area on the hitbox layer enters it, and it is not our own.
+#func _on_Hurtbox_area_entered(area):
+#	if area.owner != self:
+#		print("ouch bro!")
+
