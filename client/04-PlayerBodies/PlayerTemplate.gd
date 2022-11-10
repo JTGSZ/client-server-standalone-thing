@@ -13,10 +13,12 @@ var speed = 200
 var body_player_controlled = false
 
 #Test-----------------------------------------
+#Spells
 var spell = preload("res://99-TestCases/Spell.tscn")
 var can_fire = true
 var rate_of_fire = 0.4
 #Test-----------------------------------------
+var floating_text = preload("res://06-Unsorted/FloatingText.tscn")
 
 #onready vars basically get set in _ready lol
 #this is just animation player and state shit
@@ -26,7 +28,7 @@ onready var animationState = animationTree.get("parameters/playback")
 
 #The Melee hitbox can be a part of ourselves I guess
 #idk lol
-onready var meleehitbox = $MeleeHitbox
+
 
 func _ready():
 	animationTree.active = true
@@ -96,9 +98,13 @@ func read_attack_inputs():
 		var spell_instance = spell.instance()
 		get_parent().add_child(spell_instance)
 		spell_instance.origin_caster = self
+		#origin position
 		spell_instance.position = get_global_position()
+		
 		spell_instance.rotation = get_angle_to(get_global_mouse_position())
+		
 		yield(get_tree().create_timer(rate_of_fire),"timeout")
+		
 		can_fire = true
 
 #dumb selection circle lol
@@ -111,9 +117,21 @@ func selected(selected):
 		else:
 			select_sprite.visible = false
 
-func spell_hit(attack):
-	health -= attack
+#we received actual damage
+func receive_damage(dmg_amount):
+	var dmg_text = floating_text.instance()
+	dmg_text.position = get_global_position()
+	dmg_text.amount = dmg_amount
+	get_parent().add_child(dmg_text)
+	
+	
+	health -= dmg_amount
 	print("Taken Attack:", health, "/5000")
+	
+#Hit by a spell?
+func spell_hit(attack):
+	receive_damage(attack)
+	
 	
 ##this is a signal sent to us from the hurtbox
 ##When a area on the hitbox layer enters it, and it is not our own.

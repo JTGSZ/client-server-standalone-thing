@@ -6,8 +6,6 @@ var following_mob: bool = false
 var velocity: Vector2 = Vector2()
 var direction: Vector2 = Vector2()
 
-var current_target: KinematicBody2D
-
 func _ready():
 	pass
 

@@ -338,6 +338,8 @@ hframes = 60
 frame = 12
 
 [node name="Clickbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
 script = ExtResource( 3 )
 
 [node name="ClickBoxArea" type="CollisionShape2D" parent="Clickbox"]
@@ -378,7 +380,5 @@ parameters/Run/blend_position = Vector2( 0, 0 )
 modulate = Color( 0.0313726, 0, 1, 1 )
 position = Vector2( 0, 10 )
 shape = SubResource( 40 )
-
-[node name="FrontPosition" type="Position2D" parent="."]
 
 [editable path="hurtbox"]

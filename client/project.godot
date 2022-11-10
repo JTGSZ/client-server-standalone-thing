@@ -103,6 +103,7 @@ ctrl={
 2d_physics/layer_1="Collisionboxes"
 2d_physics/layer_2="Hurtboxes"
 2d_physics/layer_3="Hitboxes"
+2d_physics/layer_4="UIBoxes"
 
 [physics]
 
