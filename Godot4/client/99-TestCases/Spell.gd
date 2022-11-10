@@ -1,14 +1,14 @@
 extends Area2D
 
 #The SPEED of this thing
-export(int) var projectile_speed = 200
+@export var projectile_speed: int = 200
 #The lifetime of this thing, aka max and what we count up
-export(int) var projectile_lifetime = 100
+@export var projectile_lifetime: int = 100
 
-export(int) var damage = 10
+@export var damage: int = 10
 var current_lifetime = 0
 #Need a ref to our caster so we don't self-collide and fuck ourselves up.
-var origin_caster:KinematicBody2D
+var origin_caster:CharacterBody2D
 
 func _physics_process(delta):
 	var direction = Vector2.RIGHT.rotated(rotation)

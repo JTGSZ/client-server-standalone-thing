@@ -10,11 +10,11 @@ var playercontroller = preload("res://03-Player_Controller/Player_Controller.tsc
 
 #What we start with lol
 func _ready():
-	var mapstart_instance = mapstart.instance()
+	var mapstart_instance = mapstart.instantiate()
 	add_child(mapstart_instance)
 	
-	var player_body_instance = player_body.instance()
-	var playercontroller_instance = playercontroller.instance()
+	var player_body_instance = player_body.instantiate()
+	var playercontroller_instance = playercontroller.instantiate()
 	
 	var primary_ysort = mapstart_instance.get_node("PrimaryYSort")
 	primary_ysort.add_child(player_body_instance)

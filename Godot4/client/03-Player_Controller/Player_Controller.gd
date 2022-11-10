@@ -1,6 +1,6 @@
-extends Position2D
+extends Marker2D
 
-var current_body: KinematicBody2D
+var current_body: CharacterBody2D
 var following_mob: bool = false
 
 var velocity: Vector2 = Vector2()
@@ -17,7 +17,7 @@ func follow_controlled_mob():
 	if current_body && following_mob:
 		self.position = current_body.position
 
-func _input(event):
+func _input(_event):
 	#tab mob control swaps
 	if(Input.is_action_just_released("tab")):
 		swap_to_next_mob()

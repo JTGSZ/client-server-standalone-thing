@@ -1,0 +1,55 @@
+0b7126e0c6e86d3ec295a72f5aa6e0bd
+::res://::1668061332
+default_env.tres::Environment::-1::1668053738::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1667608871::0::1::::<><>::
+icon.png::CompressedTexture2D::135089516115288158::1667550614::1668053845::1::::<><>::
+::res://01-Autoload/::1668055294
+Actor_Controller.gd::GDScript::-1::1668053738::0::1::::<>Node<>::
+Server.gd::GDScript::-1::1668055294::0::1::::<>Node<>::
+::res://02-MainScenes/::1668061288
+Map.tscn::PackedScene::5124967627526376765::1668061288::0::1::::<><>::uid://dj6c04l25xaha<>uid://bsj3kt5mqjvuw<>uid://7410t7ql0k77
+SceneHandler.gd::GDScript::-1::1668060297::0::1::::<>Node<>::
+SceneHandler.tscn::PackedScene::3716725486869771081::1668061288::0::1::::<><>::res://02-MainScenes/SceneHandler.gd
+::res://03-Player_Controller/::1668061288
+Player_Controller.gd::GDScript::-1::1668058149::0::1::::<>Marker2D<>::
+Player_Controller.tscn::PackedScene::6124519433069811202::1668061288::0::1::::<><>::res://03-Player_Controller/Player_Controller.gd
+TestUI.tscn::PackedScene::-1::1668053738::0::1::::<><>::
+::res://04-PlayerBodies/::1668058791
+Clickbox.gd::GDScript::-1::1668053738::0::1::::<>Area2D<>::
+Hurtbox.gd::GDScript::-1::1668053738::0::1::::<>Area2D<>::
+MeleeHitbox.gd::GDScript::-1::1668053738::0::1::::<>Area2D<>::
+PlayerTemplate.gd::GDScript::-1::1668058296::0::1::::<>CharacterBody2D<>::
+PlayerTemplate.tscn::PackedScene::7855124974468356518::1668058791::0::1::::<><>::res://05-Overlaps/hurtbox.tscn<>res://04-PlayerBodies/PlayerTemplate.gd<>res://04-PlayerBodies/Clickbox.gd<>uid://b0k6r1b1ngmtv<>uid://iap26ymjvvl5
+::res://05-Overlaps/::1668049411
+hitbox.tscn::PackedScene::-1::1668053738::0::1::::<><>::
+hurtbox.tscn::PackedScene::-1::1668053738::0::1::::<><>::
+::res://06-Unsorted/::1668058087
+FloatingText.gd::GDScript::-1::1668058086::0::1::::<>Marker2D<>::
+FloatingText.tscn::PackedScene::-1::1668053738::0::1::::<><>::res://Assets/fonts/FSEX302.ttf<>res://06-Unsorted/FloatingText.gd
+::res://99-TestCases/::1668058735
+Spell.gd::GDScript::-1::1668053738::0::1::::<>Area2D<>::
+Spell.tscn::PackedScene::2806574163921834382::1668058735::0::1::::<><>::res://99-TestCases/Spell.gd<>uid://c31uqu08s4rw4
+::res://Assets/::1668059994
+Player.png::CompressedTexture2D::2985824409792029664::1667592309::1668053845::1::::<><>::
+Selected.png::CompressedTexture2D::562471386288450848::1667617862::1668053845::1::::<><>::
+::res://Assets/effex/::1667620664
+::res://Assets/fonts/::1668053845
+FSEX302.ttf::FontFile::5221820086635170456::1667907704::1668053845::1::::<><>::
+::res://Assets/projectiles/::1668053846
+icicle_0.png::CompressedTexture2D::6793046814026167221::1667726371::1668053846::1::::<><>::
+::res://Assets/terrain_shit/::1668059994
+TX Plant.png::CompressedTexture2D::8866619961366697189::1611037133::1668059994::1::::<><>::
+TX Player.png::CompressedTexture2D::158708217274296058::1611145297::1668059994::1::::<><>::
+TX Props.png::CompressedTexture2D::2307534286064376064::1611405727::1668059994::1::::<><>::
+TX Shadow Plant.png::CompressedTexture2D::3962351818537416673::1610157980::1668059994::1::::<><>::
+TX Shadow.png::CompressedTexture2D::5975527442791609631::1611391753::1668059994::1::::<><>::
+TX Struct.png::CompressedTexture2D::5957816424122407645::1611392449::1668059994::1::::<><>::
+TX Tileset Grass.png::CompressedTexture2D::3670118247555502298::1608879222::1668059994::1::::<><>::
+TX Tileset Stone Ground.png::CompressedTexture2D::7818760536886971645::1605362648::1668059994::1::::<><>::
+TX Tileset Wall.png::CompressedTexture2D::6600608052820450528::1611405179::1668059994::1::::<><>::
+::res://Assets/test/::1668056700
+Player.png::CompressedTexture2D::4163699505807503947::1667623546::1668056700::1::::<><>::
+::res://Assets/UI_Shit/::1668053846
+EmptyBar.png::CompressedTexture2D::1831349200597089781::1667980250::1668053845::1::::<><>::
+EmptyBarProgress.png::CompressedTexture2D::3717607461704201132::1667980453::1668053845::1::::<><>::
+EmptyBarUnder.png::CompressedTexture2D::6777737491267668447::1667980264::1668053845::1::::<><>::

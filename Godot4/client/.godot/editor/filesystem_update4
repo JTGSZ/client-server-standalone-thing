@@ -1,0 +1,4 @@
+res://02-MainScenes/SceneHandler.tscn
+res://03-Player_Controller/Player_Controller.tscn
+res://02-MainScenes/Map.tscn
+res://04-PlayerBodies/PlayerTemplate.tscn

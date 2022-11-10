@@ -1,7 +1,7 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 #the direction we are moving
-var velocity: Vector2 = Vector2()
+#var velocity: Vector2 = Vector2()
 #the direction we are facing.
 var facing_direction: Vector2 = Vector2()
 
@@ -22,9 +22,9 @@ var floating_text = preload("res://06-Unsorted/FloatingText.tscn")
 
 #onready vars basically get set in _ready lol
 #this is just animation player and state shit
-onready var animationPlayer = $AnimationPlayer
-onready var animationTree = $AnimationTree
-onready var animationState = animationTree.get("parameters/playback")
+@onready var animationPlayer = $AnimationPlayer
+@onready var animationTree = $AnimationTree
+@onready var animationState = animationTree.get("parameters/playback")
 
 #The Melee hitbox can be a part of ourselves I guess
 #idk lol
@@ -55,7 +55,9 @@ func _physics_process(_delta):
 	
 	#This basically makes sure our diagonals don't go xtra fast
 	velocity = velocity.normalized()
-	velocity = move_and_slide(velocity * speed)
+	set_velocity(velocity * speed)
+	move_and_slide()
+	velocity = velocity
 
 func read_movement_inputs():
 	# If we hit ctrl, we just swap directions.
@@ -95,7 +97,7 @@ func read_attack_inputs():
 	if Input.is_action_just_pressed("spacebar") and can_fire == true:
 		can_fire = false
 		animationState.travel("Attack")
-		var spell_instance = spell.instance()
+		var spell_instance = spell.instantiate()
 		get_parent().add_child(spell_instance)
 		spell_instance.origin_caster = self
 		#origin position
@@ -103,27 +105,26 @@ func read_attack_inputs():
 		
 		spell_instance.rotation = get_angle_to(get_global_mouse_position())
 		
-		yield(get_tree().create_timer(rate_of_fire),"timeout")
+		await get_tree().create_timer(rate_of_fire).timeout
 		
 		can_fire = true
 
 #dumb selection circle lol
 #when called we just make it visible and not visible ya
-func selected(selected):
-	var select_sprite: Sprite = get_node("Selected")
+func selected(sprite_selected):
+	var select_sprite: Sprite2D = get_node("Selected")
 	if select_sprite:
-		if selected:
+		if sprite_selected:
 			select_sprite.visible = true
 		else:
 			select_sprite.visible = false
 
 #we received actual damage
 func receive_damage(dmg_amount):
-	var dmg_text = floating_text.instance()
+	var dmg_text = floating_text.instantiate()
 	dmg_text.position = get_global_position()
 	dmg_text.amount = dmg_amount
 	get_parent().add_child(dmg_text)
-	
 	
 	health -= dmg_amount
 	print("Taken Attack:", health, "/5000")
@@ -134,7 +135,7 @@ func spell_hit(attack):
 	
 	
 ##this is a signal sent to us from the hurtbox
-##When a area on the hitbox layer enters it, and it is not our own.
+##When a area checked the hitbox layer enters it, and it is not our own.
 #func _on_Hurtbox_area_entered(area):
 #	if area.owner != self:
 #		print("ouch bro!")

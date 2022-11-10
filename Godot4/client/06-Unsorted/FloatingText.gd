@@ -1,8 +1,7 @@
-extends Position2D
+extends Marker2D
 
 #Refs to our children lol
-onready var label:Label = $Label
-onready var tween:Tween = $Tween
+@onready var label:Label = $Label
 
 #physics nums for process loop and moving it
 var velocity = Vector2(50, -100)
@@ -36,27 +35,27 @@ func _ready():
 	#If a critical pump the size up
 	if critical:
 		max_size = Vector2(1.5, 1.5)
-	#set the text color depending on where we reached
+	#set the text color depending checked where we reached
 	label.set("custom_colors/font_color", text_color)
 	
-	
+#	var tween = get_tree().create_tween()
 	#where we start
-	tween.interpolate_property(self, 'scale', scale, max_size, 0.2, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+#	tween.interpolate_property(self, 'scale', scale, max_size, 0.2, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 	
 	#move the alpha color down lol
-	tween.interpolate_property(self,'modulate', 
-	Color(modulate.r, modulate.g, modulate.b, modulate.a),
-	Color(modulate.r, modulate.g, modulate.b, 0.3),
-	0.3, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0.6)
+#	tween.interpolate_property(self,'modulate', 
+#	Color(modulate.r, modulate.g, modulate.b, modulate.a),
+#	Color(modulate.r, modulate.g, modulate.b, 0.3),
+#	0.3, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0.6)
 	
 	#scale text down after 0.3 seconds
-	tween.interpolate_property(self, 'scale', max_size, Vector2(0.8, 0.8), 1.0, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0.5)
+#	tween.interpolate_property(self, 'scale', max_size, Vector2(0.8, 0.8), 1.0, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0.5)
 
 	#Destroy the tween after 1 second
-	tween.interpolate_callback(self, 1.0, "destroy")
+#	tween.interpolate_callback(self, 1.0, "destroy")
 	
 	#start the tween
-	tween.start()
+#	tween.start()
 
 func _process(delta):
 	velocity += gravity * mass * delta
