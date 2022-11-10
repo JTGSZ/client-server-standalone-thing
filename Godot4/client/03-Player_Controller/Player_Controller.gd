@@ -18,12 +18,13 @@ func follow_controlled_mob():
 		self.position = current_body.position
 
 func _input(_event):
-	#tab mob control swaps
-	if(Input.is_action_just_released("tab")):
-		swap_to_next_mob()
-	
-	#if(Input.is_action_just_pressed("left_mousebutton")):
-		#print(event)
+	if ActorController.inputs_enabled:
+		#tab mob control swaps
+		if(Input.is_action_just_released("tab")):
+			swap_to_next_mob()
+		
+		#if(Input.is_action_just_pressed("left_mousebutton")):
+			#print(event)
 		
 
 #------------------------

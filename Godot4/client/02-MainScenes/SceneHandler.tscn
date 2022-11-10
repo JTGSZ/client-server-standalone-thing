@@ -1,6 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://bs7n6qfu4b3fx"]
+[gd_scene load_steps=3 format=3 uid="uid://bs7n6qfu4b3fx"]
 
 [ext_resource type="Script" path="res://02-MainScenes/SceneHandler.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://b2f5d17c7u7ib" path="res://02-MainScenes/99-ChatWindow/ChatWindow.tscn" id="2_nbgtd"]
 
 [node name="SceneHandler" type="Node"]
 script = ExtResource("1")
+
+[node name="ChatWindow" parent="." instance=ExtResource("2_nbgtd")]
+
+[node name="Chatbox" parent="ChatWindow" index="0"]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" parent="ChatWindow/Chatbox" index="0"]
+layout_mode = 3
+
+[node name="VBoxContainer" parent="ChatWindow/Chatbox" index="1"]
+layout_mode = 3
+
+[node name="RichTextLabel" parent="ChatWindow/Chatbox/VBoxContainer" index="0"]
+layout_mode = 3
+
+[node name="HBoxContainer" parent="ChatWindow/Chatbox/VBoxContainer" index="1"]
+layout_mode = 3
+
+[node name="Label" parent="ChatWindow/Chatbox/VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 3
+
+[node name="LineEdit" parent="ChatWindow/Chatbox/VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 3
+
+[connection signal="focus_entered" from="ChatWindow" to="." method="_on_chat_window_focus_entered"]
+[connection signal="focus_exited" from="ChatWindow" to="." method="_on_chat_window_focus_exited"]
+
+[editable path="ChatWindow"]

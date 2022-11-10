@@ -1,2 +1,13 @@
+Panel
+SubViewportContainer
+SubViewport
+LineEdit
+Label
+HBoxContainer
+RichTextLabel
+VBoxContainer
+Control
+Window
+AcceptDialog
 Node2D
 Camera2D

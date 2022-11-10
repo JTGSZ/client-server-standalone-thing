@@ -8,8 +8,11 @@ var mapstart = preload("res://02-MainScenes/Map.tscn")
 var player_body = preload("res://04-PlayerBodies/PlayerTemplate.tscn")
 var playercontroller = preload("res://03-Player_Controller/Player_Controller.tscn")
 
+#var chatwindow = preload("res://02-MainScenes/99-ChatWindow/ChatWindow.tscn")
+
 #What we start with lol
 func _ready():
+#	set_process_unhandled_key_input(false)
 	var mapstart_instance = mapstart.instantiate()
 	add_child(mapstart_instance)
 	
@@ -24,4 +27,12 @@ func _ready():
 	ActorController.add_to_controllable_mobs(player_body_instance)
 	playercontroller_instance.swap_to_next_mob()
 
+#	var created_chatwindow = chatwindow.instantiate()
+#	add_child(created_chatwindow)
 	
+func _on_chat_window_focus_entered():
+	ActorController.inputs_enabled = false
+
+
+func _on_chat_window_focus_exited():
+	ActorController.inputs_enabled = true

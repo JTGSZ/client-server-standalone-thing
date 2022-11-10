@@ -1,10 +1,14 @@
 extends Node
 
-#Basically a singleton loaded in that lets us know what things we can control with our camera thing.
-
+#Basically a singleton loaded in that handles a buncha shit lol
+#what characters we can control manually
 var controllable_characters:Array = []
 
+#The body we currently have selected
 var currently_selected: CharacterBody2D
+
+#If our inputs are enabled
+var inputs_enabled = true
 
 func _ready():
 	pass # Replace with function body.
