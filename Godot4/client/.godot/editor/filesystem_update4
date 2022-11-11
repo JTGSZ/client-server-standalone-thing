@@ -1,9 +1,6 @@
-res://04-PlayerBodies/PlayerTemplate.tscn
-res://04-PlayerBodies/PlayerTemplate.gd
 res://03-Player_Controller/Player_Controller.tscn
 res://02-MainScenes/SceneHandler.tscn
-res://02-MainScenes/SceneHandler.gd
 res://02-MainScenes/99-ChatWindow/ChatWindow.tscn
-res://01-Autoload/Actor_Controller.gd
+res://04-PlayerBodies/PlayerTemplate.tscn
+res://99-TestCases/dash.tscn
 res://03-Player_Controller/TestUI.tscn
-res://03-Player_Controller/Player_Controller.gd

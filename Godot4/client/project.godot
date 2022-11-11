@@ -8,6 +8,16 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "CharacterBody2D",
+"class": &"PlayerTemplate",
+"language": &"GDScript",
+"path": "res://04-PlayerBodies/PlayerTemplate.gd"
+}]
+_global_script_class_icons={
+"PlayerTemplate": ""
+}
+
 [application]
 
 config/name="Standalone Client lol"

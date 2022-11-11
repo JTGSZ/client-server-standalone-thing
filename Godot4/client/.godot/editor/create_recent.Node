@@ -1,3 +1,10 @@
+HSplitContainer
+TextureProgressBar
+ProgressBar
+CanvasLayer
+Timer
+Node2D
+GPUParticles2D
 Panel
 SubViewportContainer
 SubViewport
@@ -9,5 +16,4 @@ VBoxContainer
 Control
 Window
 AcceptDialog
-Node2D
 Camera2D

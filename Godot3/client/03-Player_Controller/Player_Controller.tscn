@@ -6,6 +6,7 @@
 script = ExtResource( 1 )
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
+visible = false
 current = true
 limit_top = -10000001
 limit_bottom = 10000002

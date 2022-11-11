@@ -333,8 +333,8 @@ transitions = ["Idle", "Run", SubResource("25"), "Run", "Idle", SubResource("26"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="19"]
 
-[sub_resource type="RectangleShape2D" id="40"]
-size = Vector2(15, 8)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7mfa"]
+size = Vector2(14, 8)
 
 [node name="PlayerTemplate" type="CharacterBody2D"]
 script = ExtResource("2")
@@ -347,7 +347,7 @@ texture = ExtResource("4")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_qj2ep")
 hframes = 60
-frame = 7
+frame = 18
 
 [node name="Clickbox" type="Area2D" parent="."]
 collision_layer = 8
@@ -380,7 +380,7 @@ parameters/Run/blend_position = Vector2(0, 0)
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 modulate = Color(0.0313726, 0, 1, 1)
-position = Vector2(0, 10)
-shape = SubResource("40")
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_n7mfa")
 
 [editable path="hurtbox"]

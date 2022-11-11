@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyo4hwirib36l"]
+
+[ext_resource type="Script" path="res://99-TestCases/dash.gd" id="1_f8dq2"]
+
+[node name="Dash" type="Node2D"]
+position = Vector2(33, 12)
+script = ExtResource("1_f8dq2")
+
+[node name="DurationTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="DurationTimer" to="." method="_on_duration_timer_timeout"]
