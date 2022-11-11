@@ -25,10 +25,10 @@ collapsed = true
 
 [node name="OurHealthbar" type="TextureProgressBar" parent="GUI/HSplitContainer"]
 layout_mode = 2
-offset_right = 634.0
+offset_right = 1280.0
 offset_bottom = 55.0
 size_flags_horizontal = 3
-value = 44.0
+value = 100.0
 fill_mode = 1
 texture_under = ExtResource("2_r84tv")
 texture_over = ExtResource("3_wwrbr")
@@ -36,12 +36,13 @@ texture_progress = ExtResource("4_ponp8")
 tint_progress = Color(0.909804, 0, 0, 1)
 
 [node name="TargetHealthbar" type="TextureProgressBar" parent="GUI/HSplitContainer"]
+visible = false
 layout_mode = 2
 offset_left = 774.0
 offset_right = 1280.0
 offset_bottom = 55.0
 size_flags_horizontal = 10
-value = 44.0
+value = 100.0
 texture_under = ExtResource("2_r84tv")
 texture_over = ExtResource("3_wwrbr")
 texture_progress = ExtResource("4_ponp8")

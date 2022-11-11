@@ -8,7 +8,8 @@ class_name PlayerTemplate
 var facing_direction: Vector2 = Vector2(-1, 0)
 
 #testcase for health
-var health = 5000
+var max_health = 500
+var current_health = 500
 #How fast we goin atm
 var speed = 200
 #Do we have a player hooked into us?
@@ -38,6 +39,9 @@ enum {
 var character_state = NORMAL
 
 var dash_duration = 0.2
+
+#selected circle sprite
+@onready var select_sprite:Sprite2D = $Selected
 
 #onready vars basically get set in _ready lol
 #this is just animation player and state shit
@@ -153,7 +157,7 @@ func read_attack_inputs():
 #dumb selection circle lol
 #when called we just make it visible and not visible ya
 func selected(sprite_selected):
-	var select_sprite: Sprite2D = get_node("Selected")
+
 	if select_sprite:
 		if sprite_selected:
 			select_sprite.visible = true
@@ -167,11 +171,14 @@ func receive_damage(dmg_amount):
 	dmg_text.amount = dmg_amount
 	get_parent().add_child(dmg_text)
 	
-	health -= dmg_amount
-	print("Taken Attack:", health, "/5000")
+	current_health -= dmg_amount
+	
+	print("Taken Attack:", current_health, "/5000")
 	
 #Hit by a spell?
 func spell_hit(attack):
 	receive_damage(attack)
-	
+
+func update_healthbar():
+	ActorController.player_controller.update_healthbar(self)
 	

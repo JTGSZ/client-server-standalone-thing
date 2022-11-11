@@ -6,13 +6,23 @@ var following_mob: bool = false
 var velocity: Vector2 = Vector2()
 var direction: Vector2 = Vector2()
 
+@onready var ourbody_healthbar: TextureProgressBar = $GUI/HSplitContainer/OurHealthbar
+@onready var targetbody_healthbar: TextureProgressBar = $GUI/HSplitContainer/TargetHealthbar
+
 func _ready():
-	pass
+	ActorController.player_controller = self
 
 func _physics_process(_delta):
 	follow_controlled_mob()
+
 #	read_input()
-		
+
+func update_healthbar(body_to_update):
+		if current_body == body_to_update:
+			targetbody_healthbar.value = int((float(body_to_update.current_health) / body_to_update.max_health) * 100 )
+		elif body_to_update == ActorController.currently_selected:
+			ourbody_healthbar.value = int((float(body_to_update.current_health) / body_to_update.max_health) * 100 )
+	
 func follow_controlled_mob():
 	if current_body && following_mob:
 		self.position = current_body.position

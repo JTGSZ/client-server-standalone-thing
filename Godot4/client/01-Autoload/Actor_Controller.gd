@@ -10,6 +10,9 @@ var currently_selected: CharacterBody2D
 #If our inputs are enabled
 var inputs_enabled = true
 
+#Our player_controller/UI stuff
+var player_controller
+
 func _ready():
 	pass # Replace with function body.
 
@@ -31,12 +34,15 @@ func selected_target(target):
 	if target == currently_selected:
 		currently_selected.selected(false)
 		currently_selected = null
+		player_controller.targetbody_healthbar.visible = false
 	else:
 		#If we are clicking checked another target deselect and then select the new one.
 		if currently_selected:
 			currently_selected.selected(false)
 		
 		currently_selected = target
+		player_controller.targetbody_healthbar.visible = true
+		player_controller.update_healthbar(target)
 		target.selected(true)
 		
 
