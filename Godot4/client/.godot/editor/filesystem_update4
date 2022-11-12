@@ -1,11 +1,6 @@
-res://03-Player_Controller/Player_Controller.tscn
-res://02-MainScenes/SceneHandler.tscn
-res://02-MainScenes/99-ChatWindow/ChatWindow.tscn
+res://07-Abilities/00-Example/Example.tscn
+res://04-PlayerBodies/AbilityHolder.gd
+res://99-TestCases/dash.tscn
+res://07-Abilities/00-Example/Example.gd
 res://04-PlayerBodies/PlayerTemplate.tscn
-res://99-TestCases/TestSlot.tscn
-res://99-TestCases/TestSlotObj.tscn
-res://99-TestCases/TestSlotObj.gd
-res://99-TestCases/drag_preview.tscn
-res://99-TestCases/drag_preview.gd
-res://99-TestCases/Spell.tscn
-res://99-TestCases/TestSlot.gd
+res://04-PlayerBodies/PlayerTemplate.gd

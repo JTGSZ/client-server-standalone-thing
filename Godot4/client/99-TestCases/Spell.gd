@@ -1,3 +1,6 @@
+#This is basically a icicle projectile lol
+#not the spellcast itself
+
 extends Area2D
 
 #The SPEED of this thing

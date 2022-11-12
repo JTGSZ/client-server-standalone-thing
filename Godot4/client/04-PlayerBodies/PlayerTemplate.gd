@@ -57,6 +57,7 @@ var dash_duration = 0.2
 
 func _ready():
 	animationTree.active = true
+	AbilityHolder.parent_body = self
 	
 func _physics_process(_delta):
 	velocity = Vector2()

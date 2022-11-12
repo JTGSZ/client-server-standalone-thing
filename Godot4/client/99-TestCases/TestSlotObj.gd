@@ -3,6 +3,7 @@ extends TextureRect
 #This is just a sprite scene
 var drag_preview = preload("res://99-TestCases/drag_preview.tscn")
 
+var object_type = "ability"
 
 #When we click and drag this fires off
 #We put the data we need to pass over to the thing we are dropping on in the return

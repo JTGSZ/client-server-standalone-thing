@@ -1,0 +1,17 @@
+Basically, here is how the ability system works.
+On each body, there is an ability holder.
+
+===How the ability nodes work===
+1. We instance the scene here.
+2. We cram it into the ability holder
+3. We add it to the ability holder's dictionary via add_ability
+	3.1 Take note, we also need to remove it from the ability holder's dictionary if we delete the node.
+	
+4. The user can cram it onto a hotbar, or activate it however.
+5. We call the ability holder, and perform the actions it wants.
+
+
+Things:
+	These are just the nodes that do the things.
+	To note we won't store something like a icicle spear(Projectile) in here,
+	Simply because the projectile can be used in several spells.
