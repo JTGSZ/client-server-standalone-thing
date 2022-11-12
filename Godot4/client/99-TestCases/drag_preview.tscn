@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://brejtw7rbps8e"]
+
+[ext_resource type="Script" path="res://99-TestCases/drag_preview.gd" id="1_os103"]
+
+[node name="DragPreview" type="Sprite2D"]
+script = ExtResource("1_os103")

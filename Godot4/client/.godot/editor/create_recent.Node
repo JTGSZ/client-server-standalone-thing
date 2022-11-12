@@ -1,10 +1,13 @@
+Sprite2D
+TextureRect
+Panel
+PanelContainer
+GridContainer
 Label
 MarginContainer
 Timer
 TextureProgressBar
-TextureRect
 TextureButton
-Panel
 Node
 HBoxContainer
 Control
