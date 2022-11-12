@@ -383,4 +383,6 @@ modulate = Color(0.0313726, 0, 1, 1)
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_n7mfa")
 
+[node name="AbilityHolder" type="Node" parent="."]
+
 [editable path="hurtbox"]

@@ -42,6 +42,8 @@ var dash_duration = 0.2
 
 #selected circle sprite
 @onready var select_sprite:Sprite2D = $Selected
+#Ability Holder
+@onready var AbilityHolder = $AbilityHolder
 
 #onready vars basically get set in _ready lol
 #this is just animation player and state shit
