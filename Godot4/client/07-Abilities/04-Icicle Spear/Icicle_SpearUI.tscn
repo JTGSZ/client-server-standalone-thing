@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://6vluusyk2da0"]
+
+[ext_resource type="Script" path="res://07-Abilities/04-Icicle Spear/Icicle_SpearUI.gd" id="1_24j73"]
+[ext_resource type="Texture2D" uid="uid://cewhi026cbvog" path="res://Assets/AbilityIcons/ice-spear.png" id="1_dygl7"]
+
+[node name="Icicle_SpearUI" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_dygl7")
+ignore_texture_size = true
+script = ExtResource("1_24j73")

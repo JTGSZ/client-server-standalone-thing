@@ -31,8 +31,8 @@ func _ready():
 	
 	var nodetest2 = ice_spear.instantiate()
 	self.add_child(nodetest2)
-	self.add_ability("ice_spear", nodetest2)
-	self.set_bind_dictionary("one", "ice_spear")
+	self.add_ability("icicle_spear", nodetest2)
+	self.set_bind_dictionary("one", "icicle_spear")
 
 #We set the bind key to the ability dictionary key
 func set_bind_dictionary(target_bind, ability_dictionary_key):
@@ -55,6 +55,14 @@ func fire_bindkey(given_key):
 	if bind_dictionary[given_key]:
 		ability_dictionary[bind_dictionary[given_key]].fire_ability()
 		parent_body.animationState.travel("Attack")
+
+#We receive a key string
+#We just fire it from the normal dictionary
+#func fire_by_key(given_key):
+#	if ability_dictionary[given_key]:
+#		ability_dictionary[given_key].fire_ability()
+#		parent_body.animationState.travel("Attack")
+		
 		
 		
 		

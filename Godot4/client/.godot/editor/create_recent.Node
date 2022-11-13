@@ -1,12 +1,13 @@
-GridContainer
+Label
 TextureRect
+CenterContainer
 Panel
+GridContainer
 Button
 VBoxContainer
 Timer
 Sprite2D
 PanelContainer
-Label
 MarginContainer
 TextureProgressBar
 TextureButton

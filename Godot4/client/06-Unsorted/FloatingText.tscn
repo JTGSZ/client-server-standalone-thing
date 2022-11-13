@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dc5jff8tj3g7g"]
+[gd_scene load_steps=3 format=3 uid="uid://dc5jff8tj3g7g"]
 
 [ext_resource type="Script" path="res://06-Unsorted/FloatingText.gd" id="2"]
+[ext_resource type="FontFile" uid="uid://cgnqu4xdi0ai7" path="res://Assets/fonts/FSEX302.ttf" id="2_m3k36"]
 
 [node name="FloatingText" type="Marker2D"]
 z_index = 1
@@ -16,4 +17,9 @@ offset_left = -50.0
 offset_top = -12.5
 offset_right = 50.0
 offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_m3k36")
 text = "200"

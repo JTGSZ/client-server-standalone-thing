@@ -28,13 +28,17 @@ func _physics_process(delta):
 	
 #Here is where we do the shit.
 func fire_ability():
+#	print(linked_body.velocity)
 	if !currently_dashing:
 		currently_dashing = true
-		
+
 		if linked_body.velocity:
+			
 			dash_vector = linked_body.velocity
 		else:
 			dash_vector = linked_body.facing_direction
+			
+#		print(dash_vector)
 		
 		linked_body.stop_movement_input = true
 		linked_body.speed += dash_speed
@@ -49,6 +53,7 @@ func _on_duration_timeout():
 	set_physics_process(false)
 	linked_body.stop_movement_input = false
 	linked_body.speed -= dash_speed
+	dash_vector = Vector2.ZERO
 	currently_dashing = false
 	
 	

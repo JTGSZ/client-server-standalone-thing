@@ -38,22 +38,25 @@ func _ready():
 	#set the text color depending checked where we reached
 	label.set("custom_colors/font_color", text_color)
 	
-#	var tween = get_tree().create_tween()
+	var tween = get_tree().create_tween()
+	var tween2 = get_tree().create_tween()
 	#where we start
 #	tween.interpolate_property(self, 'scale', scale, max_size, 0.2, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+#	tween.tween_property(self, "scale", Vector2(), 1)
+	tween.tween_property(self, "scale",Vector2(0.8, 0.8), 1.2)
 	
 	#move the alpha color down lol
 #	tween.interpolate_property(self,'modulate', 
 #	Color(modulate.r, modulate.g, modulate.b, modulate.a),
 #	Color(modulate.r, modulate.g, modulate.b, 0.3),
 #	0.3, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0.6)
-	
+	tween2.tween_property(self,"modulate",Color(modulate.r, modulate.g, modulate.b, 0.3), 0.4)
 	#scale text down after 0.3 seconds
 #	tween.interpolate_property(self, 'scale', max_size, Vector2(0.8, 0.8), 1.0, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0.5)
 
 	#Destroy the tween after 1 second
 #	tween.interpolate_callback(self, 1.0, "destroy")
-	
+	tween.tween_callback(self.destroy)
 	#start the tween
 #	tween.start()
 
