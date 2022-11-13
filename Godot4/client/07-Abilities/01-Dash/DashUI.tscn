@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxol8f3h3ul70"]
+
+[ext_resource type="Texture2D" uid="uid://bssiewsg1q7ed" path="res://Assets/AbilityIcons/sprint.png" id="1_pa4jy"]
+[ext_resource type="Script" path="res://07-Abilities/01-Dash/DashUI.gd" id="2_s48aw"]
+
+[node name="DashUI" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1240.0
+offset_bottom = -680.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pa4jy")
+ignore_texture_size = true
+script = ExtResource("2_s48aw")

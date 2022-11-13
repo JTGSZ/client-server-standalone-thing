@@ -16,10 +16,7 @@ var speed = 200
 var body_player_controlled = false
 
 #Test-----------------------------------------
-#Spells
-var spell = preload("res://99-TestCases/Spell.tscn")
-var can_fire = true
-var rate_of_fire = 0.4
+
 #Test-----------------------------------------
 #floating text effect for damage/heals or some shit.
 var floating_text = preload("res://06-Unsorted/FloatingText.tscn")
@@ -130,20 +127,6 @@ func read_attack_inputs():
 			
 		if Input.is_action_just_pressed("two_key"):
 			AbilityHolder.fire_bindkey("two")
-#		if Input.is_action_just_pressed("spacebar") and can_fire == true:
-#			can_fire = false
-#			animationState.travel("Attack")
-#			var spell_instance = spell.instantiate()
-#			get_parent().add_child(spell_instance)
-#			spell_instance.origin_caster = self
-#			#origin position
-#			spell_instance.position = get_global_position()
-#
-#			spell_instance.rotation = get_angle_to(get_global_mouse_position())
-#
-#			await get_tree().create_timer(rate_of_fire).timeout
-#
-#			can_fire = true
 
 #dumb selection circle lol
 #when called we just make it visible and not visible ya

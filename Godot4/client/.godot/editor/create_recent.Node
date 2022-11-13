@@ -1,9 +1,11 @@
-Timer
-Sprite2D
+GridContainer
 TextureRect
 Panel
+Button
+VBoxContainer
+Timer
+Sprite2D
 PanelContainer
-GridContainer
 Label
 MarginContainer
 TextureProgressBar
@@ -20,7 +22,6 @@ SubViewportContainer
 SubViewport
 LineEdit
 RichTextLabel
-VBoxContainer
 Window
 AcceptDialog
 Camera2D

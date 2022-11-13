@@ -1,6 +1,6 @@
 extends Node2D
 
-var projectile = preload("res://99-TestCases/Spell.tscn")
+var projectile = preload("res://08-Projectiles/Ice_Spear.tscn")
 
 var linked_body:CharacterBody2D
 
