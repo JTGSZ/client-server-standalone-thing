@@ -1,18 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://dc5jff8tj3g7g"]
 
-[ext_resource path="res://Assets/fonts/FSEX302.ttf" type="FontFile" id=1]
-[ext_resource path="res://06-Unsorted/FloatingText.gd" type="Script" id=2]
-
-[sub_resource type="FontFile" id=41]
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
+[ext_resource type="Script" path="res://06-Unsorted/FloatingText.gd" id="2"]
 
 [node name="FloatingText" type="Marker2D"]
 z_index = 1
-script = ExtResource( 2 )
+script = ExtResource("2")
 
 [node name="Label" type="Label" parent="."]
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -21,10 +16,4 @@ offset_left = -50.0
 offset_top = -12.5
 offset_right = 50.0
 offset_bottom = 12.5
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 41 )
 text = "200"
-align = 1
-valign = 1
-
-[node name="Tween" type="Tween" parent="."]

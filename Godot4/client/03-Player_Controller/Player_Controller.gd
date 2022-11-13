@@ -19,9 +19,10 @@ func _physics_process(_delta):
 
 func update_healthbar(body_to_update):
 		if current_body == body_to_update:
-			targetbody_healthbar.value = int((float(body_to_update.current_health) / body_to_update.max_health) * 100 )
-		elif body_to_update == ActorController.currently_selected:
 			ourbody_healthbar.value = int((float(body_to_update.current_health) / body_to_update.max_health) * 100 )
+		
+		if body_to_update == ActorController.currently_selected:
+			targetbody_healthbar.value = int((float(body_to_update.current_health) / body_to_update.max_health) * 100 )
 	
 func follow_controlled_mob():
 	if current_body && following_mob:

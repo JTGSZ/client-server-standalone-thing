@@ -1,6 +1,10 @@
-res://07-Abilities/00-Example/Example.tscn
+res://07-Abilities/01-Dash/Dash.tscn
+res://07-Abilities/01-Dash/Dash.gd
+res://06-Unsorted/FloatingText.tscn
 res://04-PlayerBodies/AbilityHolder.gd
-res://99-TestCases/dash.tscn
-res://07-Abilities/00-Example/Example.gd
 res://04-PlayerBodies/PlayerTemplate.tscn
 res://04-PlayerBodies/PlayerTemplate.gd
+res://07-Abilities/04-Icicle Spear/Icicle_Spear.tscn
+res://07-Abilities/04-Icicle Spear/Icicle_Spear.gd
+res://03-Player_Controller/Player_Controller.gd
+res://03-Player_Controller/Player_Controller.tscn

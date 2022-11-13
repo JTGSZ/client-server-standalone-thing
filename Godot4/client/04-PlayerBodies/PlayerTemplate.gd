@@ -23,13 +23,7 @@ var rate_of_fire = 0.4
 #Test-----------------------------------------
 #floating text effect for damage/heals or some shit.
 var floating_text = preload("res://06-Unsorted/FloatingText.tscn")
-#are we currently dashing?
-var currently_dashing = false
-var dash_vector: Vector2 = Vector2()
-var dash_ticks_left = 0
 
-var dash_ticks = 25
-var dash_speed = 150
 
 #Character States
 enum {
@@ -38,7 +32,8 @@ enum {
 }
 var character_state = NORMAL
 
-var dash_duration = 0.2
+#Do we stop movement input?
+var stop_movement_input = false
 
 #selected circle sprite
 @onready var select_sprite:Sprite2D = $Selected
@@ -63,17 +58,21 @@ func _physics_process(_delta):
 	velocity = Vector2()
 	
 	#If we r controlled, not currently dashing, and our character state is normal
-	if body_player_controlled && !currently_dashing && character_state == NORMAL:
+	if body_player_controlled && !stop_movement_input && character_state == NORMAL:
 		read_movement_inputs()
 
-	#If currently dashing set our velocity to the dash vector
-	if currently_dashing:
-		velocity = dash_vector
-		dash_ticks_left -= 1
-		if dash_ticks_left <= 0:
-			currently_dashing = false
-			speed -= dash_speed
-		
+	movement_animations()
+
+	if body_player_controlled && character_state != STUNNED:
+		read_attack_inputs()
+		pass
+	
+	#This basically makes sure our diagonals don't go xtra fast
+#	velocity = velocity.normalized()
+	set_velocity(velocity * speed)
+	move_and_slide()
+
+func movement_animations():
 	#Animation shit lol
 	if velocity != Vector2.ZERO:
 		animationTree.set("parameters/Idle/blend_position", facing_direction)
@@ -83,15 +82,6 @@ func _physics_process(_delta):
 		animationTree.set("parameters/Idle/blend_position", facing_direction)
 		animationState.travel("Idle")
 	animationTree.set("parameters/Attack/blend_position", facing_direction)
-	
-	if body_player_controlled && character_state != STUNNED:
-#		read_attack_inputs()
-		pass
-	
-	#This basically makes sure our diagonals don't go xtra fast
-#	velocity = velocity.normalized()
-	set_velocity(velocity * speed)
-	move_and_slide()
 
 func read_movement_inputs():
 	if ActorController.inputs_enabled:
@@ -128,34 +118,32 @@ func read_movement_inputs():
 				
 				facing_direction = our_pos.direction_to(target_pos)
 				
-		if Input.is_action_just_pressed("spacebar"):
-			if velocity:
-				dash_vector = velocity
-			else:
-				dash_vector = facing_direction
-				
-			currently_dashing = true
-			dash_ticks_left = dash_ticks
-			speed += dash_speed
-
 
 #Read attack input lol
 func read_attack_inputs():
 	if ActorController.inputs_enabled:
-		if Input.is_action_just_pressed("spacebar") and can_fire == true:
-			can_fire = false
-			animationState.travel("Attack")
-			var spell_instance = spell.instantiate()
-			get_parent().add_child(spell_instance)
-			spell_instance.origin_caster = self
-			#origin position
-			spell_instance.position = get_global_position()
+		if Input.is_action_just_pressed("spacebar"):
+			AbilityHolder.fire_bindkey("spacebar")
 			
-			spell_instance.rotation = get_angle_to(get_global_mouse_position())
+		if Input.is_action_just_pressed("one_key"):
+			AbilityHolder.fire_bindkey("one")
 			
-			await get_tree().create_timer(rate_of_fire).timeout
-			
-			can_fire = true
+		if Input.is_action_just_pressed("two_key"):
+			AbilityHolder.fire_bindkey("two")
+#		if Input.is_action_just_pressed("spacebar") and can_fire == true:
+#			can_fire = false
+#			animationState.travel("Attack")
+#			var spell_instance = spell.instantiate()
+#			get_parent().add_child(spell_instance)
+#			spell_instance.origin_caster = self
+#			#origin position
+#			spell_instance.position = get_global_position()
+#
+#			spell_instance.rotation = get_angle_to(get_global_mouse_position())
+#
+#			await get_tree().create_timer(rate_of_fire).timeout
+#
+#			can_fire = true
 
 #dumb selection circle lol
 #when called we just make it visible and not visible ya
@@ -175,8 +163,9 @@ func receive_damage(dmg_amount):
 	get_parent().add_child(dmg_text)
 	
 	current_health -= dmg_amount
+	update_healthbar()
 	
-	print("Taken Attack:", current_health, "/5000")
+	print("Taken Attack:", current_health, "/500")
 	
 #Hit by a spell?
 func spell_hit(attack):
