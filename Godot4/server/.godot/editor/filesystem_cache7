@@ -1,12 +1,10 @@
 0b7126e0c6e86d3ec295a72f5aa6e0bd
-::res://::1668321806
+::res://::1668324442
 default_env.tres::Environment::-1::1668321721::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1667551713::0::1::::<><>::
 icon.png::CompressedTexture2D::965726999882959694::1667549747::1668321730::1::::<><>::
 ::res://01-Autoload/::1668321778
 lol.txt::TextFile::-1::1668321776::0::1::::<><>::
-::res://02-MainScenes/::1668321806
-Server.tscn::PackedScene::1011857585380704770::1668321807::0::1::::<><>::
-::res://Scenes/::1668321749
-::res://Scenes/Main/::1668321806
+::res://02-MainScenes/::1668322156
 Server.gd::GDScript::-1::1668321721::0::1::::<>Node<>::
+Server.tscn::PackedScene::1011857585380704770::1668322156::0::1::::<><>::res://02-MainScenes/Server.gd

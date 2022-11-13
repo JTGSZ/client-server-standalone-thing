@@ -1,0 +1,6 @@
+The path of nodes that communicate over the network must match the paths on the client bro.
+EG: Sceneroots must be named the same thing
+
+Only the nodes names and locations need to match tho.
+
+The Nodes on the server need to have RPC functions that match the clients, but they can be left empty.

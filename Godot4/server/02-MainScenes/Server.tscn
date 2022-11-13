@@ -2,5 +2,47 @@
 
 [ext_resource type="Script" path="res://02-MainScenes/Server.gd" id="1_w1ho2"]
 
-[node name="Server" type="Node"]
+[node name="Server" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_w1ho2")
+
+[node name="MenuBackground" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 10.0
+offset_right = 252.0
+offset_bottom = 309.0
+
+[node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 24.0
+offset_right = 256.0
+offset_bottom = 224.0
+
+[node name="PortInput" type="LineEdit" parent="Menu"]
+layout_mode = 2
+offset_right = 200.0
+offset_bottom = 31.0
+text = "Port"
+
+[node name="MaxPlayerInput" type="LineEdit" parent="Menu"]
+layout_mode = 2
+offset_top = 35.0
+offset_right = 200.0
+offset_bottom = 66.0
+text = "Max Players"
+
+[node name="Button" type="Button" parent="Menu"]
+layout_mode = 2
+offset_top = 70.0
+offset_right = 200.0
+offset_bottom = 101.0
+text = "Start Server"
+
+[connection signal="pressed" from="Menu/Button" to="." method="_on_button_pressed"]
