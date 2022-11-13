@@ -338,6 +338,9 @@ transitions = ["Idle", "Run", SubResource("25"), "Run", "Idle", SubResource("26"
 size = Vector2(14, 8)
 
 [node name="PlayerTemplate" type="CharacterBody2D"]
+platform_on_leave = 2
+platform_floor_layers = 4294901760
+platform_wall_layers = 1
 script = ExtResource("2")
 
 [node name="Selected" type="Sprite2D" parent="."]

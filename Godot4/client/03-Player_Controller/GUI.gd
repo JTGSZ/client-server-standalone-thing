@@ -13,3 +13,4 @@ func _process(delta):
 
 func _on_ability_book_toggle_pressed():
 	abilitybook.visible = !abilitybook.visible
+

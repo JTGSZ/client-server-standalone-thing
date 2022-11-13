@@ -1,18 +1,7 @@
-res://07-Abilities/01-Dash/Dash.tscn
-res://07-Abilities/01-Dash/Dash.gd
-res://06-Unsorted/FloatingText.tscn
-res://04-PlayerBodies/AbilityHolder.gd
-res://04-PlayerBodies/PlayerTemplate.tscn
-res://04-PlayerBodies/PlayerTemplate.gd
+res://03-Player_Controller/Player_Controller.tscn
+res://07-Abilities/01-Dash/DashUI.gd
 res://07-Abilities/04-Icicle Spear/Icicle_Spear.tscn
 res://07-Abilities/04-Icicle Spear/Icicle_Spear.gd
-res://03-Player_Controller/Player_Controller.gd
-res://03-Player_Controller/Player_Controller.tscn
+res://02-MainScenes/Map.tscn
+res://04-PlayerBodies/PlayerTemplate.tscn
 res://03-Player_Controller/GUI.gd
-res://99-TestCases/TestSlotObj.tscn
-res://99-TestCases/TestSlot.tscn
-res://07-Abilities/01-Dash/DashUI.tscn
-res://07-Abilities/01-Dash/DashUI.gd
-res://99-TestCases/drag_preview.tscn
-res://08-Projectiles/Spell.tscn
-res://08-Projectiles/Ice_Spear.tscn

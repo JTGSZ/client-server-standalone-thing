@@ -18,8 +18,14 @@ func fire_ability():
 	get_parent().get_parent().get_parent().add_child(spell_instance)
 	spell_instance.origin_caster = linked_body
 	
+#	spell_instance.position = linked_body.get_global_position()
 	spell_instance.position = linked_body.get_global_position()
-	spell_instance.rotation = get_angle_to(get_global_mouse_position())
+	if ActorController.currently_selected && ActorController.currently_selected != linked_body:
+		spell_instance.rotation = linked_body.get_angle_to(ActorController.currently_selected.global_position)
+	else:
+		spell_instance.rotation = linked_body.get_angle_to(get_global_mouse_position())
+	
+
 	
 	
 	

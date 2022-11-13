@@ -1,6 +1,6 @@
 extends TextureRect
 
-var drag_preview = preload("res://99-TestCases/drag_preview.tscn")
+var drag_preview = preload("res://09-UI_Stuff/drag_preview.tscn")
 var object_type = "ability"
 
 func _get_drag_data(at_position: Vector2):

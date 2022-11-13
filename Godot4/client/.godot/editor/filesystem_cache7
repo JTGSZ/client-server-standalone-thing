@@ -1,5 +1,5 @@
 0b7126e0c6e86d3ec295a72f5aa6e0bd
-::res://::1668304963
+::res://::1668305878
 default_env.tres::Environment::-1::1668053738::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1667608871::0::1::::<><>::
 icon.png::CompressedTexture2D::135089516115288158::1667550614::1668053845::1::::<><>::
@@ -44,9 +44,10 @@ DashUI.tscn::PackedScene::6416813183964616133::1668303897::0::1::::<><>::uid://b
 ::res://07-Abilities/04-Icicle Spear/::1668305049
 Icicle_Spear.gd::GDScript::-1::1668305027::0::1::::<>Node2D<>::
 Icicle_Spear.tscn::PackedScene::593853319210164188::1668305049::0::1::::<><>::res://07-Abilities/04-Icicle Spear/Icicle_Spear.gd
-::res://08-Projectiles/::1668305049
+::res://08-Projectiles/::1668305133
 Ice_Spear.gd::GDScript::-1::1668247862::0::1::::<>Area2D<>::
-Ice_Spear.tscn::PackedScene::6622716775441877132::1668305049::0::1::::<><>::res://08-Projectiles/Ice_Spear.gd<>uid://c31uqu08s4rw4
+Ice_Spear.tscn::PackedScene::6622716775441877132::1668305133::0::1::::<><>::res://08-Projectiles/Ice_Spear.gd<>uid://c31uqu08s4rw4
+::res://09-UI_Stuff/::1668305118
 ::res://99-TestCases/::1668304933
 drag_preview.gd::GDScript::-1::1668241792::0::1::::<>Sprite2D<>::
 drag_preview.tscn::PackedScene::3588470125296776406::1668303790::0::1::::<><>::res://99-TestCases/drag_preview.gd
