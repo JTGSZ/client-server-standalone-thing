@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfatp6ctbupk4"]
+[gd_scene load_steps=6 format=3 uid="uid://cfatp6ctbupk4"]
 
-[ext_resource type="PackedScene" uid="uid://dj6c04l25xaha" path="res://04-PlayerBodies/PlayerTemplate.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://bsj3kt5mqjvuw" path="res://Assets/terrain_shit/TX Tileset Grass.png" id="1_8ujx7"]
 [ext_resource type="Texture2D" uid="uid://7410t7ql0k77" path="res://Assets/terrain_shit/TX Props.png" id="2_00y4p"]
 
@@ -1070,9 +1069,3 @@ layer_0/tile_data = PackedInt32Array(-327688, 458752, 1, -327687, 524288, 1, -32
 
 [node name="PrimaryYSort" type="Node2D" parent="."]
 y_sort_enabled = true
-
-[node name="PlayerTemplate" parent="PrimaryYSort" instance=ExtResource("1")]
-position = Vector2(-99, 53)
-
-[node name="PlayerTemplate2" parent="PrimaryYSort" instance=ExtResource("1")]
-position = Vector2(112, 42)

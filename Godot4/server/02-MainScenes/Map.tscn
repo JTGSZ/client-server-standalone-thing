@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpvieshasnonk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1674"]
+size = Vector2(576, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o62cy"]
+size = Vector2(30.5, 320)
+
+[node name="Map" type="Node2D"]
+
+[node name="PrimaryYSort" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Area2D4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(16, 224)
+shape = SubResource("RectangleShape2D_r1674")
+debug_color = Color(0, 0.556863, 0.556863, 0.419608)
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(16, -128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-272.75, 176)
+shape = SubResource("RectangleShape2D_o62cy")
+
+[node name="Area2D3" type="Area2D" parent="."]
+position = Vector2(560, -128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(-272.75, 176)
+shape = SubResource("RectangleShape2D_o62cy")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(16, -128)
+shape = SubResource("RectangleShape2D_r1674")
+debug_color = Color(0, 0.556863, 0.556863, 0.419608)

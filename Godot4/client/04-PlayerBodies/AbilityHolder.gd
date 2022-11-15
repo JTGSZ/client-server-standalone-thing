@@ -32,7 +32,7 @@ func _ready():
 	var nodetest2 = ice_spear.instantiate()
 	self.add_child(nodetest2)
 	self.add_ability("icicle_spear", nodetest2)
-	self.set_bind_dictionary("one", "icicle_spear")
+
 
 #We set the bind key to the ability dictionary key
 func set_bind_dictionary(target_bind, ability_dictionary_key):

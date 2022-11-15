@@ -48,6 +48,7 @@ var stop_movement_input = false
 
 
 func _ready():
+	name = str(get_multiplayer_authority())
 	animationTree.active = true
 	AbilityHolder.parent_body = self
 	
@@ -55,7 +56,8 @@ func _physics_process(_delta):
 	velocity = Vector2()
 	
 	#If we r controlled, not currently dashing, and our character state is normal
-	if body_player_controlled && !stop_movement_input && character_state == NORMAL:
+#	if body_player_controlled && !stop_movement_input && character_state == NORMAL:
+	if is_multiplayer_authority():
 		read_movement_inputs()
 
 	movement_animations()
@@ -68,6 +70,8 @@ func _physics_process(_delta):
 #	velocity = velocity.normalized()
 	set_velocity(velocity * speed)
 	move_and_slide()
+	if is_multiplayer_authority():
+		rpc("remote_set_position", global_position)
 
 func movement_animations():
 	#Animation shit lol
@@ -157,3 +161,6 @@ func spell_hit(attack):
 func update_healthbar():
 	ActorController.player_controller.update_healthbar(self)
 	
+@rpc(unreliable)
+func remote_set_position(authority_position):
+	global_position = authority_position

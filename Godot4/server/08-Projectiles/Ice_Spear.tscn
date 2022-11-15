@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://beqxdclxbat86"]
+
+[ext_resource type="Script" path="res://08-Projectiles/Ice_Spear.gd" id="1_q7ojo"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(27, 10)
+
+[node name="Ice Spear" type="Area2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_q7ojo")
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(4.5, 2)
+shape = SubResource("1")
+debug_color = Color(0.968627, 0, 0.454902, 0.419608)

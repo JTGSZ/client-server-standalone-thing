@@ -1,16 +1,10 @@
-res://03-Player_Controller/Player_Controller.tscn
-res://07-Abilities/04-Icicle Spear/Icicle_SpearUI.tscn
-res://07-Abilities/04-Icicle Spear/Icicle_SpearUI.gd
-res://04-PlayerBodies/AbilityHolder.gd
-res://07-Abilities/01-Dash/DashUI.tscn
-res://09-UI_Stuff/hot_button.gd
-res://09-UI_Stuff/hot_button.tscn
-res://03-Player_Controller/GUI.gd
-res://03-Player_Controller/HotButtonBack1.gd
-res://03-Player_Controller/HotButtonButton1.gd
-res://07-Abilities/01-Dash/Dash.gd
-res://04-PlayerBodies/PlayerTemplate.gd
+res://02-MainScenes/SceneHandler.gd
+res://02-MainScenes/SceneHandler.tscn
 res://04-PlayerBodies/PlayerTemplate.tscn
-res://06-Unsorted/FloatingText.tscn
-res://06-Unsorted/FloatingText.gd
-res://03-Player_Controller/Player_Controller.gd
+res://04-PlayerBodies/PlayerTemplate.gd
+res://03-Player_Controller/Player_Controller.tscn
+res://04-PlayerBodies/ServerPlayerTemplate.tscn
+res://08-Projectiles/ServerIce_Spear.tscn
+res://02-MainScenes/Map.tscn
+res://02-MainScenes/ServerMap.tscn
+res://08-Projectiles/Ice_Spear.tscn

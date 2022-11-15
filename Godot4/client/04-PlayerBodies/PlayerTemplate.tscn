@@ -390,4 +390,7 @@ shape = SubResource("RectangleShape2D_n7mfa")
 [node name="AbilityHolder" type="Node" parent="."]
 script = ExtResource("6_rco4i")
 
+[node name="TempCamSetup" type="Camera2D" parent="."]
+current = true
+
 [editable path="hurtbox"]

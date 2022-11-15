@@ -1,9 +1,13 @@
+CollisionShape2D
+Area2D
+Camera2D
 Label
+Button
+MultiplayerSynchronizer
 TextureRect
 CenterContainer
 Panel
 GridContainer
-Button
 VBoxContainer
 Timer
 Sprite2D
@@ -25,4 +29,3 @@ LineEdit
 RichTextLabel
 Window
 AcceptDialog
-Camera2D
