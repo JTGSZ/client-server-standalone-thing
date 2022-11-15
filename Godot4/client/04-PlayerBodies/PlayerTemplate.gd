@@ -6,7 +6,6 @@ class_name PlayerTemplate
 #var velocity: Vector2 = Vector2()
 #the direction we are facing.
 var facing_direction: Vector2 = Vector2(-1, 0)
-
 #testcase for health
 var max_health = 500
 var current_health = 500
@@ -56,22 +55,26 @@ func _physics_process(_delta):
 	velocity = Vector2()
 	
 	#If we r controlled, not currently dashing, and our character state is normal
-#	if body_player_controlled && !stop_movement_input && character_state == NORMAL:
-	if is_multiplayer_authority():
-		read_movement_inputs()
+	if body_player_controlled && !stop_movement_input && character_state == NORMAL:
+		if is_multiplayer_authority():
+			read_movement_inputs()
 
-	movement_animations()
+	if is_multiplayer_authority():
+		rpc("set_player_state", global_position, facing_direction)
+		movement_animations()
+#	animationslol()
+#	animationState.travel(animation_state)
 
 	if body_player_controlled && character_state != STUNNED:
-		read_attack_inputs()
-		pass
+		if is_multiplayer_authority():
+			read_attack_inputs()
+			pass
 	
+
 	#This basically makes sure our diagonals don't go xtra fast
 #	velocity = velocity.normalized()
 	set_velocity(velocity * speed)
 	move_and_slide()
-	if is_multiplayer_authority():
-		rpc("set_player_state", global_position)
 
 func movement_animations():
 	#Animation shit lol
@@ -83,6 +86,8 @@ func movement_animations():
 		animationTree.set("parameters/Idle/blend_position", facing_direction)
 		animationState.travel("Idle")
 	animationTree.set("parameters/Attack/blend_position", facing_direction)
+	
+#	movement_vector = velocity
 
 func read_movement_inputs():
 	if ActorController.inputs_enabled:
@@ -93,14 +98,13 @@ func read_movement_inputs():
 		if Input.is_action_pressed("ctrl"):
 			if Input.is_action_just_pressed("Up"):
 				facing_direction = Vector2(0, -1)
-				var test_info = "WOWeee"
-				rpc_id(1, "test_case_1", test_info)
 			if Input.is_action_just_pressed("Down"):
 				facing_direction = Vector2(0, 1)
 			if Input.is_action_just_pressed("Left"):
 				facing_direction = Vector2(-1, 0)
 			if Input.is_action_just_pressed("Right"):
 				facing_direction = Vector2(1, 0)
+			
 		else:
 			if Input.is_action_pressed("Up"):
 				velocity.y -= 1
@@ -114,7 +118,8 @@ func read_movement_inputs():
 			if Input.is_action_pressed("Right"):
 				velocity.x += 1
 				facing_direction = Vector2(1, 0)
-
+				
+			
 			if ActorController.currently_selected:
 				var target_pos = ActorController.currently_selected.get_global_position()
 				var our_pos = get_global_position()
@@ -164,9 +169,15 @@ func update_healthbar():
 	ActorController.player_controller.update_healthbar(self)
 
 @rpc(unreliable)
-func set_player_state(authority_position):
+func set_player_state(authority_position, received_direction):
+	facing_direction = received_direction
+	animationTree.set("parameters/Idle/blend_position", facing_direction)
+	animationTree.set("parameters/Run/blend_position", facing_direction)
+	if authority_position == global_position:
+		animationState.travel("Idle")
+	else:
+		animationState.travel("Run")
+		
 	global_position = authority_position
 	
-@rpc
-func test_case_1():
-	pass
+	

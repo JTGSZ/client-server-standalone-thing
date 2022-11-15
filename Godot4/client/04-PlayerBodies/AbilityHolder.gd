@@ -40,9 +40,12 @@ func set_bind_dictionary(target_bind, ability_dictionary_key):
 
 #These need to re redone, cause idk what i was thinkin there
 #Adds an ability to the dictionary of this thing.
-func add_ability(given_key, object):
+func add_ability(given_key, object:Node2D):
 	ability_dictionary[given_key] = object
 	object.linked_body = get_parent()
+#	var authority = get_parent().name
+#	authority = str(name)
+#	object.set_multiplayer_authority()
 
 #Removes an ability from the dictionary of this thing.
 func remove_ability(given_key):
@@ -53,19 +56,13 @@ func remove_ability(given_key):
 #Then we fire it
 func fire_bindkey(given_key):
 	if bind_dictionary[given_key]:
-		ability_dictionary[bind_dictionary[given_key]].fire_ability()
+		var retrieved_key = bind_dictionary[given_key]
+		ability_dictionary[retrieved_key].fire_ability()
 		parent_body.animationState.travel("Attack")
+#		rpc_id(1, "test_func_1")
+#		print(get_multiplayer_authority())
 
-#We receive a key string
-#We just fire it from the normal dictionary
-#func fire_by_key(given_key):
-#	if ability_dictionary[given_key]:
-#		ability_dictionary[given_key].fire_ability()
-#		parent_body.animationState.travel("Attack")
-		
-		
-		
-		
-		
-		
+#@rpc
+#func test_func_1():
+#	pass
 		

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://p37pbsued5am"]
+
+[ext_resource type="Script" path="res://07-Abilities/04-Icicle Spear/Icicle_Spear.gd" id="1_tgsy4"]
+
+[node name="Icicle_Spear" type="Node2D"]
+script = ExtResource("1_tgsy4")
