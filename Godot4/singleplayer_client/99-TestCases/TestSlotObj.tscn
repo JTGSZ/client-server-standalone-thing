@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2xug8ij56fpq"]
+
+[ext_resource type="Texture2D" uid="uid://bor5wledpttfy" path="res://Assets/UI_Shit/42whitebox.png" id="1_5oa6y"]
+[ext_resource type="Script" path="res://99-TestCases/TestSlotObj.gd" id="2_r7yao"]
+
+[node name="TestSlotObj" type="TextureRect"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -32.0
+offset_right = -598.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("1_5oa6y")
+script = ExtResource("2_r7yao")
