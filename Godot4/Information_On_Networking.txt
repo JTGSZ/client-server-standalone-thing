@@ -1,0 +1,13 @@
+The paths of nodes on the server must match the paths on the clients, for communication.
+As the RPC call occurs on the same node path on the targeted/or all ID peers.
+
+Example:
+Server: Handler -> Main -> Player (rpc call "weiner")
+Client: Handler -> Main -> Player (gets "weiner" called)
+
+Heres an error example.
+Server: Handler -> Main -> Player -> Tiger (rpc call "weiner")
+Client: Handler -> Main -> Player -> Doesn't Exist (gets "weiner" called on non-existent tiger node and we get errors.)
+
+
+Server is peer id 1, only the multiplayer authority can call shit on a node, so make sure the caller and the authority are fine re: shit.
