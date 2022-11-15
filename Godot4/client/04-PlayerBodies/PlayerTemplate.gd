@@ -71,7 +71,7 @@ func _physics_process(_delta):
 	set_velocity(velocity * speed)
 	move_and_slide()
 	if is_multiplayer_authority():
-		rpc("remote_set_position", global_position)
+		rpc("set_player_state", global_position)
 
 func movement_animations():
 	#Animation shit lol
@@ -162,5 +162,5 @@ func update_healthbar():
 	ActorController.player_controller.update_healthbar(self)
 	
 @rpc(unreliable)
-func remote_set_position(authority_position):
+func set_player_state(authority_position):
 	global_position = authority_position

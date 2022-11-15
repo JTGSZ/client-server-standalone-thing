@@ -1,10 +1,3 @@
-res://02-MainScenes/SceneHandler.gd
 res://02-MainScenes/SceneHandler.tscn
 res://04-PlayerBodies/PlayerTemplate.tscn
 res://04-PlayerBodies/PlayerTemplate.gd
-res://03-Player_Controller/Player_Controller.tscn
-res://04-PlayerBodies/ServerPlayerTemplate.tscn
-res://08-Projectiles/ServerIce_Spear.tscn
-res://02-MainScenes/Map.tscn
-res://02-MainScenes/ServerMap.tscn
-res://08-Projectiles/Ice_Spear.tscn

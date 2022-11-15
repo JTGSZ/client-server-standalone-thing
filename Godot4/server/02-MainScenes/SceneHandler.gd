@@ -13,16 +13,25 @@ func _on_button_pressed():
 	multiplayer.multiplayer_peer = multiplayer_peer
 	
 	print("Server Started")
+	#These are signals
 	multiplayer_peer.peer_connected.connect(
 		func(new_peer_id):
 			await get_tree().create_timer(1).timeout
-			print("peer connected")
+			print("peer connected" + str(new_peer_id))
 			#Generic call to eerything
 			rpc("add_newly_connected_player_character", new_peer_id)
 			#This sends a call to a specific peer id, we call add_previously_connected_player_characters
 			#Then we send it connected_peer_ids array
 			rpc_id(new_peer_id, "add_previously_connected_player_characters", connected_peer_ids)
 			add_player_character(new_peer_id)
+	)
+	#SIGNALS to shit we can't even see lol
+	multiplayer_peer.peer_disconnected.connect(
+		func(peer_id):
+			print("peer disconnected" + str(peer_id))
+			var node = get_node("Map/PrimaryYSort/" + str(peer_id))
+			connected_peer_ids.erase(peer_id)
+			node.queue_free()
 	)
 	
 	$Menu.visible = false

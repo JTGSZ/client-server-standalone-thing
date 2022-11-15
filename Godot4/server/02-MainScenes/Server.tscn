@@ -48,8 +48,12 @@ text = "Start Server"
 
 [node name="ChatWindow" type="Window" parent="."]
 position = Vector2i(600, 300)
+visible = false
 
 [node name="Map" parent="." instance=ExtResource("2_ujgub")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
 
 [connection signal="pressed" from="Menu/Button" to="." method="_on_button_pressed"]
 
