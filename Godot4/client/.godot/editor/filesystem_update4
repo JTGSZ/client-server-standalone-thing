@@ -1,3 +1,7 @@
 res://02-MainScenes/SceneHandler.tscn
 res://04-PlayerBodies/PlayerTemplate.tscn
 res://04-PlayerBodies/PlayerTemplate.gd
+res://02-MainScenes/SceneHandler.gd
+res://09-UI_Stuff/HotButtonButton1.gd
+res://03-Player_Controller/Player_Controller.tscn
+res://03-Player_Controller/Player_Controller.gd

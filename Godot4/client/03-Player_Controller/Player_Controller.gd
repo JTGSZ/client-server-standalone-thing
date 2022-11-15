@@ -15,6 +15,8 @@ func _ready():
 func _physics_process(_delta):
 	follow_controlled_mob()
 
+func set_as_current_camera():
+	$Camera2D.current = true
 #	read_input()
 
 func update_healthbar(body_to_update):

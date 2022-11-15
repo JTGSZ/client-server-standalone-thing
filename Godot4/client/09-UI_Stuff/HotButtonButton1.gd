@@ -31,7 +31,8 @@ func _drop_data(at_position, data):
 	toggle_data = ability_name
 	texture_normal = loaded_texture
 	
-	ActorController.player_controller.current_body.AbilityHolder.set_bind_dictionary(our_bind, toggle_data)
+	print("Redo this in HotButtonButotn etc lol")
+#	ActorController.player_controller.current_body.AbilityHolder.set_bind_dictionary(our_bind, toggle_data)
 
 #func _on_button_up():
 #	if toggle_data:

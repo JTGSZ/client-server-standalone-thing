@@ -93,6 +93,8 @@ func read_movement_inputs():
 		if Input.is_action_pressed("ctrl"):
 			if Input.is_action_just_pressed("Up"):
 				facing_direction = Vector2(0, -1)
+				var test_info = "WOWeee"
+				rpc_id(1, "test_case_1", test_info)
 			if Input.is_action_just_pressed("Down"):
 				facing_direction = Vector2(0, 1)
 			if Input.is_action_just_pressed("Left"):
@@ -160,7 +162,11 @@ func spell_hit(attack):
 
 func update_healthbar():
 	ActorController.player_controller.update_healthbar(self)
-	
+
 @rpc(unreliable)
 func set_player_state(authority_position):
 	global_position = authority_position
+	
+@rpc
+func test_case_1():
+	pass
