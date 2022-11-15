@@ -1,4 +1,4 @@
 res://02-MainScenes/SceneHandler.tscn
+res://02-MainScenes/SceneHandler.gd
 res://04-PlayerBodies/PlayerTemplate.tscn
 res://07-Abilities/04-Icicle Spear/Icicle_Spear.tscn
-res://07-Abilities/04-Icicle Spear/Icicle_Spear.gd

@@ -5,10 +5,8 @@ var connected_peer_ids = []
 
 func _on_button_pressed():
 	multiplayer_peer.create_server(
-		9999,
-		32
-#		$Menu/PortInput.text.to_int(),
-#		$Menu/MaxPlayerInput.text.to_int()
+		$Menu/PortInput.text.to_int(),
+		$Menu/MaxPlayerInput.text.to_int()
 	)
 	multiplayer.multiplayer_peer = multiplayer_peer
 #	print(multiplayer.get_unique_id())

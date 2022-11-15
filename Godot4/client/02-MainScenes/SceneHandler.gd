@@ -9,7 +9,7 @@ var player_body = preload("res://04-PlayerBodies/PlayerTemplate.tscn")
 var playercontroller = preload("res://03-Player_Controller/Player_Controller.tscn")
 
 var multiplayer_peer = ENetMultiplayerPeer.new()
-const PORT = 9999
+const PORT = 6669
 const ADDRESS = "127.0.0.1"
 var connected_peer_ids = []
 

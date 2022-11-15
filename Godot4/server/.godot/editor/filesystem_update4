@@ -1,7 +1,5 @@
+res://02-MainScenes/Map.tscn
+res://02-MainScenes/SceneHandler.gd
 res://02-MainScenes/Server.tscn
 res://04-PlayerBodies/PlayerTemplate.tscn
 res://07-Abilities/04-Icicle Spear/Icicle_Spear.tscn
-res://02-MainScenes/Map.tscn
-res://04-PlayerBodies/AbilityHolder.gd
-res://04-PlayerBodies/PlayerTemplate.gd
-res://07-Abilities/04-Icicle Spear/Icicle_Spear.gd
