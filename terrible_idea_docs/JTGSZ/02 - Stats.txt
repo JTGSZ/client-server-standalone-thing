@@ -1,7 +1,0 @@
-Well we need some stats.
-Basically a good question is how static we will be. Aka a fireball does 375 * stat_modifier.
-The stat modifier could be something like int and we could either aim for big numbers or small numbers so just owning the skill is big.
-
-We also have a decision of everyone having same health/it scaling etc.
-
-Obv we need agility/strength of some sort, to reduce gcd/for more damage on melee etc.

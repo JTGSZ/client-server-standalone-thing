@@ -1,6 +1,0 @@
-ECs are ever present in every game since they represent a player controlled, non-player thing to perform greater actions onto.
-
-So how about we allow ppl to actually bring out npcs, such as guards in certain areas. 
-It can ping a admin, and randomly generate them a character, to do shit with?
-
-Or we can put other players into them, after-all the control system is seperated from the body.

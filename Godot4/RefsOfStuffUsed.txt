@@ -5,5 +5,12 @@ Random Ass Snippets for stuff
 (Guy is also on godot discord v normally)
 https://kidscancode.org/godot_recipes
 
-
 https://www.gameuidatabase.com/
+
+Sprites from the action adventure RPG series by HeartBeast:
+https://www.youtube.com/c/uheartbeast
+
+Help from the youtube videos at like
+https://www.youtube.com/c/GameDevelopmentCenter
+https://www.youtube.com/c/uheartbeast
+https://www.youtube.com/channel/UCTWv0kBMz5_y_pHuNHHW3hA - The Godojo
