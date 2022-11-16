@@ -8,3 +8,6 @@ How 2 run it:
   
 Important Note: 
     You need to join ur server via 127.0.0.1 on local client, even if other people are connecting to it via ur normal IP Address.
+
+Godot 3 is the project before I ported it to Godot 4.
+The singleplayer client in godot 4 is just the topdown game before I put in all the rpc shit.
